@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Square from "./Square"
 import ProjectCard from './ProjectCard';
 import detections from '../images/detections.gif'
-import isbn from "../images/isbn.jpg"
+import readr from "../images/readr.gif"
 import mahjong from "../images/mahjong.gif"
 
 
@@ -31,10 +31,10 @@ function Projects() {
         'github': "https://github.com/JovenSoh/Pose-Detector",
     },
     {
-        'title': 'ISBN Scanner',
-        'desc':'Scan ISBNs using this nifty tool to get ebooks. Built using Tesseract OCR and Google Books API.',
-        'image':isbn,
-        'website': "https://jovensoh.github.io/isbn",
+        'title': 'Readr',
+        'desc':'Collection of books that I have read.',
+        'image':readr,
+        'website': "https://jovensoh.github.io/readr",
         'github': null,
     },
     {
