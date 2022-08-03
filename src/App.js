@@ -101,6 +101,8 @@ export default function App() {
       navigationTooltips = {['Welcome','Introduction','About me','Skills','Projects']}
       scrollOverflow = {true}
       lazyLoading = {true}
+      loopBottom = {true}
+      touchSensitivity={20}
       render = {({ state, fullpageApi }) => {
         return (
           <div id='fullpage-wrapper'>

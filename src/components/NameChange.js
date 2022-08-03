@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from "react";
-import { Text, Heading, Box, Flex} from "@chakra-ui/react";
+import { Text, Heading, Box, Flex, Center} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 function NameChange() {
@@ -24,7 +24,7 @@ function NameChange() {
       let letters = props.split("")
       return(
         letters.map((a,index) => {return(
-          <MotionBox m='3px'  _hover={{textColor:"#17CCF9"}} animate={{scale:[1,1.2,1]}} transition={{delay:index/20}} >
+          <MotionBox letterSpacing='8px' fontSize='48px' m='3px'  _hover={{textColor:"#17CCF9"}} animate={{scale:[1,1.2,1]}} transition={{delay:index/20}} >
               {a}
           </MotionBox>
         )})
@@ -32,16 +32,18 @@ function NameChange() {
     }
 
     return(
-        <>
-        <Heading letterSpacing='5px' color={color} align='center'> 
-          <Flex>
-            <LightUp props="Hey, I'm Wei Kiat"/>
-          </Flex>
-        </Heading>
-        <Text bg='rgba(18,18,18,0.9)' overflow='show' fontSize='20px' letterSpacing='8px' align='center'>
+      <>
+        <Center>
+          <Heading letterSpacing='5px' color={color}> 
+            <Flex pb='10%'>
+              <LightUp props="Hey, I'm Wei Kiat"/>
+            </Flex>
+          </Heading>
+        </Center>
+        <Text bg='rgba(18,18,18,0.9)' fontSize='24px' letterSpacing='8px' align='center' pb='5%' >
             <motion.p onUpdate={onUpdate} animate={{skewX:[-100,100,0], transition:{duration:0.07, repeatDelay:1.43, repeat:Infinity }}}> {name}. </motion.p>   <p></p><p></p> I can help <strong>YOU</strong> design solutions using technology 
         </Text>
-        </>
+      </>
     )
 }
 

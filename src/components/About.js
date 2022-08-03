@@ -82,7 +82,7 @@ function About(){
     return(
             <Wrap w='full'  mt='5vh' justify='center' ref={ref}>  
                 <AnimatePresence>
-                <Box overflow='auto' maxH='25vh' w='600px'>
+                <Box overflow='auto' maxH='30vh' w='600px'>
                     <Box bg='rgba(18,18,18,0.9)' mx='30px' >
                         <Heading as={motion.div} animate={controls} initial='hidden' variants={headerVariants} custom={0}>About me</Heading>
                         <TextSlide text={paragraph} controls={controls} delay={0.5} />

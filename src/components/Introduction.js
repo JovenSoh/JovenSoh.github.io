@@ -1,4 +1,4 @@
-import { Link, VStack, HStack, IconButton, Spacer, Image, Flex, Box} from "@chakra-ui/react";
+import { Link, Flex, HStack, IconButton, Spacer, Image, VStack, Box} from "@chakra-ui/react";
 import { BsInstagram } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import { GoMarkGithub } from "react-icons/go";
@@ -9,38 +9,40 @@ import NameChange from './NameChange'
 function Introduction() {
 
   return (
-        <Flex>
-          <VStack w='full' h='90vh' p={5} spacing ={10} alignItems='center' >
-            <Spacer />
+    <VStack h='full'>
+      <Spacer />
+      <Box align='center'>
             <NameChange />
             <Link href='https://wa.me/6591187460' isExternal>
-              <motion.div whileHover={{scale:1.1}}>
-                <Box fontFamily='Courier New' color="#17CCF9" border='1px' p='5px' borderRadius='10px'>
+                <Box as={motion.div} w='150px' fontSize='20px' fontFamily='Courier New' color="#17CCF9" border='1px' p='5px' borderRadius='10px' whileHover={{scale:1.1}}>
                   Contact Me
                 </Box>
-              </motion.div>
             </Link>
-            <Spacer />
-            <Spacer />
+      </Box>
+      <Spacer />
+      <Spacer />
             
-            <Box bg='rgba(18,18,18,0.9)' alignItems='center' > 
-              <Image boxSize='100px'  borderRadius='full' src={profile} alt='profile.png'/>
-              <Box ml='5px' mt='5px'>
-                <HStack>
-                  <Link href='https://www.linkedin.com/in/wei-kiat-soh-981b51213/' isExternal>
-                    <IconButton size='xs' colorScheme='linkedin' aria-label='LinkedIn' as ={AiFillLinkedin} boxSize='20px' variant='ghost' />
-                  </Link>
-                  <Link href='https://instagram.com/death25525' isExternal>
-                    <IconButton size='xs' colorScheme='red' aria-label='Instagram' as ={BsInstagram} boxSize='20px' variant='ghost' />
-                  </Link>
-                  <Link href='https://github.com/jovensoh' isExternal>
-                    <IconButton size='xs' colorScheme='gray' aria-label='Github' as ={GoMarkGithub} boxSize='20px' variant='ghost' />
-                  </Link>
-                </HStack>
-              </Box>
-            </Box>
-          </VStack>
-        </Flex>
+      <Box bg='rgba(18,18,18,0.9)' pb='5%'> 
+        
+        <Box align='center'>
+          <Image boxSize='100px'  borderRadius='full' src={profile} alt='profile.png'/>
+          <Box ml='5px' mt='5px'>
+            <HStack>
+              <Link href='https://www.linkedin.com/in/wei-kiat-soh-981b51213/' isExternal>
+                <IconButton size='xs' colorScheme='linkedin' aria-label='LinkedIn' as ={AiFillLinkedin} boxSize='20px' variant='ghost' />
+              </Link>
+              <Link href='https://instagram.com/death25525' isExternal>
+                <IconButton size='xs' colorScheme='red' aria-label='Instagram' as ={BsInstagram} boxSize='20px' variant='ghost' />
+              </Link>
+              <Link href='https://github.com/jovensoh' isExternal>
+                <IconButton size='xs' colorScheme='gray' aria-label='Github' as ={GoMarkGithub} boxSize='20px' variant='ghost' />
+              </Link>
+            </HStack>
+          </Box>
+        </Box>
+        <Spacer />
+      </Box>
+    </VStack>
     )
 }
 

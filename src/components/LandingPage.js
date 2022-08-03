@@ -109,12 +109,12 @@ export default function LandingPage() {
             
 
             <Center >
-                <TextReveal delay={0.35}>
+                <TextReveal delay={0.25}>
                    Soh Wei Kiat 
                 </TextReveal>
             </Center>
             <Center >
-              <TextReveal delay={1.5}>
+              <TextReveal delay={1}>
                 苏维杰
               </TextReveal>
             </Center>
