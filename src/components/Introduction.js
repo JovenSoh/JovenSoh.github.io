@@ -19,7 +19,7 @@ function Introduction() {
                     Contact Me
                   </Box>
               </Link>
-              <Link href='https://wa.me/6591187460' isExternal>
+              <Link href='https://drive.google.com/file/d/1E9Pil8Mt0jOuYzS7jjW1cTQV5yXmvBmJ/view?usp=sharing' isExternal>
                   <Box as={motion.div} w='150px' fontSize='20px' fontFamily='Courier New' color="#17CCF9" border='1px' p='3px' borderRadius='10px' whileHover={{scale:1.1}}>
                     Résumé 
                   </Box>

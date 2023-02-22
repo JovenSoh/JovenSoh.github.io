@@ -40,7 +40,7 @@ function NameChange() {
             </Flex>
           </Heading>
         </Center>
-        <Text bg='rgba(18,18,18,0.9)' fontSize='24px' letterSpacing='8px' align='center' pb='5%' >
+        <Text bg='rgba(18,18,18,0.9)' fontSize='24px' letterSpacing='8px' align='center' pb='5%' px='5%' >
             <motion.p onUpdate={onUpdate} animate={{skewX:[-100,100,0], transition:{duration:0.07, repeatDelay:1.43, repeat:Infinity }}}> {name}. </motion.p>   <p></p><p></p> I can help <strong>YOU</strong> design solutions using technology 
         </Text>
       </Box>
