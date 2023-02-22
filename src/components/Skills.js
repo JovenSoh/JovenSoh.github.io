@@ -3,7 +3,7 @@ import SimpleWordCloud from './SimpleWordCloud'
 import { motion, useAnimation, AnimatePresence} from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
 import TextSlide from './TextSlide';
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -129,10 +129,17 @@ function Skills() {
     }
 
     let paragraph="Over the course of my studies, I have picked up various programming languages while working on projects involving artificial intelligence and fullstack development. I can help you create responsive websites that capture the attention of your audience and generate leads."
+    
+    const containerRef = useRef(null);
+    const containerHeight = ref.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const heightA = containerHeight > windowHeight ? containerHeight : windowHeight;
+    
     return(
-        <Wrap  w='full'  mt='5vh' justify='center' >
+        <div ref={containerRef}>
+        <Wrap  w='full' h={heightA} justify='center' >
             <Box w='600px' px='30px' overflow='auto' bg='rgba(18,18,18,0.9)' maxH='50vh' ref={ref}>
-                <Heading  as={motion.div} animate={controls} initial='hidden' variants={headerVariants} custom={0}>Skills</Heading>
+                <Heading>Skills</Heading>
                 <TextSlide text={paragraph} controls={controls} delay={0.5} />          
             </Box>
             <Box w='600px' overflow='hidden' mx='30px' bg='rgba(18,18,18,0.9)' maxH='50vh'>
@@ -151,6 +158,7 @@ function Skills() {
                 </Box>
             </Box>
         </Wrap>
+        </div>
     )
 }
 

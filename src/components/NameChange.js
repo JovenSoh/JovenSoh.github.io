@@ -32,7 +32,7 @@ function NameChange() {
     }
 
     return(
-      <>
+      <Box w='100vw'>
         <Center>
           <Heading letterSpacing='5px' color={color}> 
             <Flex pb='10%'>
@@ -43,7 +43,7 @@ function NameChange() {
         <Text bg='rgba(18,18,18,0.9)' fontSize='24px' letterSpacing='8px' align='center' pb='5%' >
             <motion.p onUpdate={onUpdate} animate={{skewX:[-100,100,0], transition:{duration:0.07, repeatDelay:1.43, repeat:Infinity }}}> {name}. </motion.p>   <p></p><p></p> I can help <strong>YOU</strong> design solutions using technology 
         </Text>
-      </>
+      </Box>
     )
 }
 

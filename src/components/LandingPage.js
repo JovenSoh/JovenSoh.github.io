@@ -53,7 +53,7 @@ export default function LandingPage() {
 
   return (
     <>
-    <Center h='87vh'>
+    <Center h='95vh'>
 
           <Box bg='rgba(18,18,18,0.9)' position='absolute' h='300px' w='300px' zIndex='1' > 
             <Animate type='rect'>  
@@ -121,7 +121,7 @@ export default function LandingPage() {
           </Box>
 
     </Center>
-    <Center h='3vh'>
+    <Center h='5vh'>
       <AnimatePresence>
         <motion.div animate={{y:-5,transition:{ duration:0.5,repeat:Infinity, repeatType:'reverse'}}}>
           <Text>↓ Scroll for more ↓ </Text>

@@ -9,15 +9,22 @@ import NameChange from './NameChange'
 function Introduction() {
 
   return (
-    <VStack h='full'>
+    <VStack h='105vh'>
       <Spacer />
       <Box align='center'>
             <NameChange />
-            <Link href='https://wa.me/6591187460' isExternal>
-                <Box as={motion.div} w='150px' fontSize='20px' fontFamily='Courier New' color="#17CCF9" border='1px' p='5px' borderRadius='10px' whileHover={{scale:1.1}}>
-                  Contact Me
-                </Box>
-            </Link>
+            <HStack justify='center' spacing='10px'>
+              <Link href='https://t.me/jovensoh' isExternal _hover='none'>
+                  <Box as={motion.div} w='150px' fontSize='20px' fontFamily='Courier New' color="#FFFFFF" bg='#12a3c7' border='1px' borderColor='#12a3c7'  p='3px' borderRadius='10px' whileHover={{scale:1.1}}>
+                    Contact Me
+                  </Box>
+              </Link>
+              <Link href='https://wa.me/6591187460' isExternal>
+                  <Box as={motion.div} w='150px' fontSize='20px' fontFamily='Courier New' color="#17CCF9" border='1px' p='3px' borderRadius='10px' whileHover={{scale:1.1}}>
+                    Résumé 
+                  </Box>
+              </Link>
+            </HStack>
       </Box>
       <Spacer />
       <Spacer />

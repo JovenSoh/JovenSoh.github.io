@@ -1,7 +1,7 @@
-import {Heading, Wrap} from '@chakra-ui/react'
-import {motion} from 'framer-motion'
-import { useState } from 'react';
-import Square from "./Square"
+import {Heading, Wrap, Box} from '@chakra-ui/react'
+import { useAnimation, AnimatePresence, motion } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import detections from '../images/detections.gif'
 import readr from "../images/readr.gif"
@@ -46,22 +46,44 @@ function Projects() {
     },
     ]
 
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+        controls.start("visible");
+        } else if (!inView) {
+        controls.start("hidden");
+        }
+    }, [controls, inView]);
+    
+    const cardVariants = {
+        hidden: {
+            opacity: "0%",
+        },
+        visible: (custom) => ({
+            opacity: "100%",
+            transition: { delay:custom, ease: [0.455, 0.03, 0.515, 0.955], duration: 1.5 }
+        })
+    }
+
     const projectList = projects.map((project, index) =>{
         return (
-            <Square delay={index}>
-                    <ProjectCard props={project} index={index}/>
-            </Square>
+            <Box as={motion.div} animate={controls} initial='hidden' variants={cardVariants}>
+                <ProjectCard props={project} index={index}/>
+            </Box>
+                
         )
     })
-
 
 
     return(
         <>
             <Heading mt='5vh' align='center'> Projects</Heading>
-            <Wrap justify='center' w='100vw' minH='100vh' mb='15vh'>
-                {projectList}
-            </Wrap>
+            <AnimatePresence>
+                <Wrap justify='center' w='100vw' minH='100vh' mb='15vh' ref={ref}>
+                    {projectList}
+                </Wrap>
+            </AnimatePresence>
         </>
     )
 }

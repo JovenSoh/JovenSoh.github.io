@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import {Chrono} from 'react-chrono'
 import {Box, Heading, Text, Wrap} from '@chakra-ui/react'
 import { useAnimation, motion, AnimatePresence } from "framer-motion";
@@ -78,24 +78,29 @@ function About(){
         }
     }, [controls, inView]);
 
-      
+    const containerRef = useRef(null);
+    const containerHeight = ref.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const height = containerHeight > windowHeight ? containerHeight : windowHeight;
     return(
-            <Wrap w='full'  mt='5vh' justify='center' ref={ref}>  
-                <AnimatePresence>
-                <Box overflow='auto' maxH='30vh' w='600px'>
-                    <Box bg='rgba(18,18,18,0.9)' mx='30px' >
-                        <Heading as={motion.div} animate={controls} initial='hidden' variants={headerVariants} custom={0}>About me</Heading>
-                        <TextSlide text={paragraph} controls={controls} delay={0.5} />
+        <div ref={containerRef}>
+            <Wrap w='full' h={height} justify='center' ref={ref} >    
+                    <AnimatePresence>
+                    <Box overflow='auto' maxH='30vh' w='600px'>
+                        <Box bg='rgba(18,18,18,0.9)' mx='30px' >
+                            <Heading>About me</Heading>
+                            <TextSlide text={paragraph} controls={controls} delay={0.5} />
+                        </Box>
                     </Box>
-                </Box>
-                
-                <Box overflow='hidden' mb='5vh' w='600px'>
-                    <Box as={motion.div} animate={controls} initial='hidden' variants={letterVariants} custom={1}>
-                        <Chrono items={items} useReadMore={false} theme = {theme} mode='VERTICAL_ALTERNATING' hideControls={true} cardHeight  />
+                    
+                    <Box overflow='hidden' mb='5vh' w='600px'>
+                        <Box as={motion.div} animate={controls} initial='hidden' variants={letterVariants} custom={1}>
+                            <Chrono items={items} useReadMore={false} theme = {theme} mode='VERTICAL_ALTERNATING' hideControls={true} cardHeight  />
+                        </Box>
                     </Box>
-                </Box>
-                </AnimatePresence>
+                    </AnimatePresence>
             </Wrap>
+        </div>
     )
 }
 

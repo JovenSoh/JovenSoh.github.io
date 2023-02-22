@@ -1,7 +1,4 @@
-import React, {useState, useEffect} from "react"
-import { useAnimation, motion, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import ReactFullpage from '@fullpage/react-fullpage';
+import React from "react"
 import Introduction from "./components/Introduction"
 import Projects from "./components/Projects"
 import Skills from "./components/Skills"
@@ -78,7 +75,6 @@ export default function App() {
     }
   }
 
-
   /*
   1. Introduction
   2. Skills
@@ -87,44 +83,15 @@ export default function App() {
   5. Background: <Box bg='#121212' bgImage={bg} bgPos='center' h='100vh' bgSize="Cover">
   */
   return (
-    <Box bg='#121212'>
-    <Box position='absolute' zIndex='0'>
-      <Particles options={options} />
-    </Box>
-    <ReactFullpage
-      scrollingSpeed = {500}
-      paddingTop = {'2vh'}
-      paddingBottom = {'2vh'}
-      normalScrollElements = {'.scrollable-content'}
-      bigSectionsDestination = {'top'}
-      navigation = {true}
-      navigationTooltips = {['Welcome','Introduction','About me','Skills','Projects']}
-      scrollOverflow = {true}
-      lazyLoading = {true}
-      loopBottom = {true}
-      touchSensitivity={20}
-      render = {({ state, fullpageApi }) => {
-        return (
-          <div id='fullpage-wrapper'>
-            <div className='section section 1'>
-              <LandingPage />
-            </div>
-            <div className='section'>
-                <Introduction />
-            </div>
-            <div className='section'>
-                <About/> 
-            </div>
-            <div className='section'>
-              <Skills />
-            </div>
-            <div className='section'>
-              <Projects /> 
-            </div>
-          </div>
-        )
-      }}
-    />
+    <Box bg='#121212' overflowX='hidden'>
+      <Box position='absolute' zIndex='0'>
+        <Particles options={options} />
+      </Box>
+      <LandingPage />
+      <Introduction />
+      <About/> 
+      <Skills />
+      <Projects /> 
     </Box>
   )
 }
