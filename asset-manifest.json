@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.3c6ff7bf.chunk.css",
-    "main.js": "/static/js/main.f03b6a81.chunk.js",
-    "main.js.map": "/static/js/main.f03b6a81.chunk.js.map",
+    "main.js": "/static/js/main.4f07a1c6.chunk.js",
+    "main.js.map": "/static/js/main.4f07a1c6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d05bcf67.js",
     "runtime-main.js.map": "/static/js/runtime-main.d05bcf67.js.map",
     "static/js/2.fe2fc3ec.chunk.js": "/static/js/2.fe2fc3ec.chunk.js",
@@ -13,12 +13,13 @@
     "static/media/detections.9aa8fa70.gif": "/static/media/detections.9aa8fa70.gif",
     "static/media/mahjong.41c6c9a9.gif": "/static/media/mahjong.41c6c9a9.gif",
     "static/media/profile.aca80d98.jpg": "/static/media/profile.aca80d98.jpg",
-    "static/media/readr.610702e6.gif": "/static/media/readr.610702e6.gif"
+    "static/media/readr.610702e6.gif": "/static/media/readr.610702e6.gif",
+    "static/media/talklah.7c6e7ea9.png": "/static/media/talklah.7c6e7ea9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d05bcf67.js",
     "static/js/2.fe2fc3ec.chunk.js",
     "static/css/main.3c6ff7bf.chunk.css",
-    "static/js/main.f03b6a81.chunk.js"
+    "static/js/main.4f07a1c6.chunk.js"
   ]
 }
